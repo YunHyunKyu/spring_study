@@ -25,3 +25,7 @@ https://start.spring.io
 스프링 부트 (위에 스프링 부트 링크로 들어갈 수 있음)
 ![springboot](https://user-images.githubusercontent.com/33935620/145813641-eed3f189-9656-4041-9bf8-9f7746cd426b.PNG)
 
+## 정적 컨텐츠
+
+현재 static/hello-static.html이 있을 때
+그 파일 자체를 그대로 넘겨줌. (내용 변화 없이).
