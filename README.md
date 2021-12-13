@@ -29,3 +29,10 @@ https://start.spring.io
 
 현재 static/hello-static.html이 있을 때
 그 파일 자체를 그대로 넘겨줌. (내용 변화 없이).
+
+## MVC와 템플릿 엔진
+MVC 스타일
+관심사를 분리해야 한다.
+MVC : Model View Controller
+View는 화면을 그리는데 집중해야한다.
+Controller는 비즈니스 로직, 내부적 처리에 집중해야 한다.
