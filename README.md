@@ -22,4 +22,5 @@ https://start.spring.io
 - 다음과 같이 변경하면 자바로 바로 실행해서 실행속도가 더 빠르다.
 ![setting](https://user-images.githubusercontent.com/33935620/145812896-6396e888-f6dd-4aa7-9df4-3f9bd479eebc.PNG)
 
+![springboot](https://user-images.githubusercontent.com/33935620/145813641-eed3f189-9656-4041-9bf8-9f7746cd426b.PNG)
 
