@@ -14,12 +14,12 @@ import java.util.Optional;
 // class에 가져다 되고 ctrl + shift + t 누르면 테스트 코드 만들어짐.
 
 
-@Service
+//@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
     // 외부에서 넣어주도록 바꿔준다,, DI라고 한다.
-    @Autowired
+    //    @Autowired
     public MemberService(MemberRepository memberRepository)  {
         this.memberRepository = memberRepository;
     }
