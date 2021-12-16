@@ -3,6 +3,8 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,10 +12,14 @@ import java.util.Optional;
 // 서비스의 용도는 비즈니스 의존적으로 설계
 // 리포지토리 같은 경우는 그저 데이터 빼, 넣어 이런 용도
 // class에 가져다 되고 ctrl + shift + t 누르면 테스트 코드 만들어짐.
+
+
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
     // 외부에서 넣어주도록 바꿔준다,, DI라고 한다.
+    @Autowired
     public MemberService(MemberRepository memberRepository)  {
         this.memberRepository = memberRepository;
     }
