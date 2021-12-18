@@ -29,11 +29,20 @@ public class MemberService {
     // 회원가입
     public Long join(Member member) {
 
-        // 함수로 만들고 싶으면 만들고 싶은 범위를 감싸고 ctrl + alt + m
-        validateDuplicateMember(member); // 중복 회원 검증
+        long start = System.currentTimeMillis();
 
-        memberRepository.save(member);
-        return member.getId();
+        try {
+            // 함수로 만들고 싶으면 만들고 싶은 범위를 감싸고 ctrl + alt + m
+            validateDuplicateMember(member); // 중복 회원 검증
+
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join = " + timeMs + "ms");
+        }
+
     }
 
     private void validateDuplicateMember(Member member) {
