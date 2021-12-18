@@ -22,27 +22,17 @@ public class MemberService {
 
     // 외부에서 넣어주도록 바꿔준다,, DI라고 한다.
     //    @Autowired
-    public MemberService(MemberRepository memberRepository)  {
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
-    
+
     // 회원가입
     public Long join(Member member) {
+        // 함수로 만들고 싶으면 만들고 싶은 범위를 감싸고 ctrl + alt + m
+        validateDuplicateMember(member); // 중복 회원 검증
 
-        long start = System.currentTimeMillis();
-
-        try {
-            // 함수로 만들고 싶으면 만들고 싶은 범위를 감싸고 ctrl + alt + m
-            validateDuplicateMember(member); // 중복 회원 검증
-
-            memberRepository.save(member);
-            return member.getId();
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMs = finish - start;
-            System.out.println("join = " + timeMs + "ms");
-        }
-
+        memberRepository.save(member);
+        return member.getId();
     }
 
     private void validateDuplicateMember(Member member) {
@@ -53,7 +43,7 @@ public class MemberService {
 //        });
 
         memberRepository.findByName(member.getName()).ifPresent(m -> {
-            throw  new IllegalStateException("이미 존재하는 회원입니다.");
+            throw new IllegalStateException("이미 존재하는 회원입니다.");
         });
     }
 
